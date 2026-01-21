@@ -1,0 +1,42 @@
+name: todo_app_with_flutter
+description: A Flutter To Do App with Firebase, voice, notifications, and dark/light mode.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter: 
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+
+  image_picker: ^1.2.1
+  firebase_storage: 12.4.10
+
+  # Firebase
+  firebase_core: ^3.5.0
+  cloud_firestore: ^5.4.4
+  firebase_auth: ^5.3.4
+
+  # Voice
+  speech_to_text: ^6.6.0
+  flutter_tts: ^3.8.3
+
+  # Notifications
+  flutter_local_notifications: ^17.2.3
+  timezone: ^0.9.2
+
+  # State management
+  provider: ^6.1.2
+
+  # UI helpers
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true

@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "58175682591",
+    "project_id": "to-do-app-10e5f",
+    "storage_bucket": "to-do-app-10e5f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58175682591:android:978173c4d97d21153e3d2a",
+        "android_client_info": {
+          "package_name": "com.example.to_do_app_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58175682591-g8f42guqq4a3fu98s5eo69u66391qncl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT4mt5j2aXiugiiD7qu0SQmV2D420JXZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58175682591-g8f42guqq4a3fu98s5eo69u66391qncl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "58175682591-a93pqal1jjnfhtodq2fphltl0779pceq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.toDoAppFlutter"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58175682591:android:deb38d23de5aec293e3d2a",
+        "android_client_info": {
+          "package_name": "com.example.todoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58175682591-g8f42guqq4a3fu98s5eo69u66391qncl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT4mt5j2aXiugiiD7qu0SQmV2D420JXZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58175682591-g8f42guqq4a3fu98s5eo69u66391qncl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "58175682591-a93pqal1jjnfhtodq2fphltl0779pceq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.toDoAppFlutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
