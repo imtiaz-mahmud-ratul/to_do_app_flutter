@@ -80,15 +80,20 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
       createdAt: DateTime.now(),
     );
     await provider.addTask(task);
-    if (mounted) Navigator.pop(context);
+
+    // Clear form after saving
+    _title.clear();
+    _description.clear();
+    setState(() {
+      _dueDate = null;
+      _dueTime = null;
+    });
   }
 
   void _startVoice() async {
     setState(() => _listening = true);
     await _voice.listen(onResult: (text) {
       setState(() => _listening = false);
-      // Simple parsing: "Title: Flutter Lab; Description: Finish; Date: 2026-01-21; Time: 20:00"
-      // Or just set title from speech
       if (text.isNotEmpty) {
         _title.text = text;
         ScaffoldMessenger.of(context)
@@ -183,6 +188,37 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 icon: const Icon(Icons.save),
                 label: const Text('Save Task'),
                 onPressed: _submit,
+              ),
+              const SizedBox(height: 20),
+              // ✅ Show tasks below the form
+              Consumer<TaskProvider>(
+                builder: (context, provider, _) {
+                  if (provider.loading) {
+                    return const CircularProgressIndicator();
+                  }
+                  if (provider.tasks.isEmpty) {
+                    return const Text("No tasks yet");
+                  }
+                  return ListView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: provider.tasks.length,
+                    itemBuilder: (context, index) {
+                      final task = provider.tasks[index];
+                      return ListTile(
+                        title: Text(task.title),
+                        subtitle: Text(
+                            "${task.description} • ${task.status.name.toUpperCase()}"),
+                        trailing: IconButton(
+                          icon: Icon(task.status == TaskStatus.completed
+                              ? Icons.check_box
+                              : Icons.check_box_outline_blank),
+                          onPressed: () => provider.toggleComplete(task),
+                        ),
+                      );
+                    },
+                  );
+                },
               ),
             ],
           ),
